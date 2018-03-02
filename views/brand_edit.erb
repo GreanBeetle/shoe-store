@@ -1,3 +1,9 @@
 <div class="well" style="text-align:center">
   <h2><%= @brand.title %></h2>
+  <br>
+  <hr>
+  <h4><%= @brand.title %>s are sold at these stores</h4>
+  <% @stores.each do |store| %>
+    <li color="black"><a href="/store/<%= store.id() %>"><%= store.name %></a></li>
+  <% end %>
 </div>

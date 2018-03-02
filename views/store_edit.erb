@@ -27,7 +27,7 @@
   <h4><%= @store.name %>'s brands</h4>
   <ul>
     <% @store_brands.each do |brand| %>
-      <li><%= brand.title %></li>
+      <li><a href="/brand/<%= brand.id() %>"><%= brand.title %></a></li>
     <% end %>
   </ul>
 </div>

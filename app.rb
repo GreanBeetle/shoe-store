@@ -47,6 +47,7 @@ end
 
 get('/brand/:id') do
   @brand = Brand.find(params.fetch("id").to_i)
+  @stores = @brand.stores
   erb(:brand_edit)
 end
 
