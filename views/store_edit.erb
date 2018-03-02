@@ -6,6 +6,28 @@
       <input type="text" name="new_name" placeholder="NEW NAME">
       <br>
       <br>
-      <button type="submit" class="btn btn-warning btn-sm">UPDATE</button>
+      <button type="submit" class="btn btn-warning btn-md">UPDATE</button>
   </form>
+  <br>
+  <hr>
+  <form action="/add_brands/<%= @store.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+      <h4>&#9760; Choose Brands for <%= @store.name %> &#9760;</h4>
+      <% @brands.each do |brand| %>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="brand_ids[]" value="<%= brand.id() %>"><%= brand.title %>
+          </label>
+        </div>
+      <% end %>
+    <button type="submit" class="btn-success btn-md">ADD</button>
+  </form>
+  <br>
+  <hr>
+  <h4><%= @store.name %>'s brands</h4>
+  <ul>
+    <% @store_brands.each do |brand| %>
+      <li><%= brand.title %></li>
+    <% end %>
+  </ul>
 </div>

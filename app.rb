@@ -40,6 +40,8 @@ end
 
 get('/store/:id') do
   @store = Store.find(params.fetch("id").to_i)
+  @brands = Brand.all - @store.brands
+  @store_brands = @store.brands
   erb(:store_edit)
 end
 
@@ -61,3 +63,23 @@ delete('/store/:id') do
   @store.destroy
   redirect('/store')
 end
+
+patch('/add_brands/:id') do
+  @id = params.fetch("id").to_i
+  @store = Store.find(@id)
+  brand_ids = params['brand_ids']
+  brand_ids.each do |brand_id|
+    brand_to_add = Brand.find(brand_id)
+    @store.brands.push(brand_to_add)
+  end
+  redirect("/store/#{@id.to_s}")
+end
+
+
+
+
+
+
+
+
+# end
