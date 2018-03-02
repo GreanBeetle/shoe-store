@@ -3,10 +3,18 @@
   <br>
   <ul style="list-style: none;">
     <% @brands.each do |brand| %>
-      <li color="black"><a href="/brand/<%= brand.id() %>"><%= brand.title %></a> $<%= brand.price %></li>
+      <li class="inline-practice" color="black"><a href="/brand/<%= brand.id() %>"><%= brand.title %></a> $<%= brand.price %>
+        <form class="inline-practice" action="/brand/<%= brand.id  %>" method="post" >
+          <input name="_method" type="hidden" value="delete">
+          <input name="delete_brand" type="hidden" value="<%= brand.id %>">
+          <button type="submit" class="btn btn-danger btn-xs">X</button>
+        </form>
+      </li>
+      <br>
       <br>
     <% end %>
   </ul>
+
   <br>
   <form action="/brand" method="post">
       <input type="text" name="title" placeholder="ADD BRAND">

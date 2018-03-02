@@ -65,6 +65,12 @@ delete('/store/:id') do
   redirect('/store')
 end
 
+delete('/brand/:id') do
+  @brand = Brand.find(params.fetch('id').to_i)
+  @brand.destroy
+  redirect('/brand')
+end
+
 patch('/add_brands/:id') do
   @id = params.fetch("id").to_i
   @store = Store.find(@id)
