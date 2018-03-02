@@ -1,44 +1,47 @@
-# Volunteer Tracker
+# Empire Kicks
 
-#### _Simple app to tracks projects and assign volunteers_
+## March 2, 2018
 
-#### _**John Rykken**_
+#### By John Rykken
 
-![view 1](https://i.imgur.com/3bnIbdd.png)
+#### Basic app written with Ruby, Sinatra, ActiveRecord, PostgreSQL, HTML, and CSS. It allows users to list faux shoe stores and shoe brands in a database, then pair stores with brands (and vice versa) via a SQL join table. The project aims to demonstrate many-to-many relationships.   
 
-## Setup/Installation Requirements
+![view 1](https://imgur.com/a/HnJeb)
 
-#### You can view the app live by visiting: (currently unavailable)
+## Setup and Installation
 
-_https://enigmatic-sierra-89342.herokuapp.com/_
+#### Live application unavailable.
 
-#### Or to deploy on local machine:
+<!--
 
-Clone to your local machine. In terminal, navigate to the root directory of the project
-Recreate the database by using the following commands in terminal:
+www.example/heroku/github/not-a-real.url.com -->
 
-* _`$ createdb [volunteer_tracker]`_
+#### To Install Locally
 
-* _`$ psql [volunteer_tracker] < my_database.sql`_
+Clone to your desktop. Using the terminal, navigate to Empire Kick's root directory and recreate the database with these commands. (This works only if Ruby and PostgreSQL are installed on your machine.)
 
-* _`$ createdb -T [volunteer_tracker] [volunteer_tracker_test]`_
+* _`$ createdb [empire_kicks]`_
 
-Use this command in terminal to run app on the localhost:
+* _`$ psql [empire_kicks] < my_database.sql`_
+
+* _`$ createdb -T [empire_kicks] [empire_kicks_test]`_
 
 * _`$ ruby app.rb`_
 
-## Running tests
+* Navigate to your browser and type 'localhost:4567' in the address bar.
 
-This app includes unit and integration testing using RSpec.
-Run `bundle exec rspec` in terminal to test.
+## Testing
 
-## Specifications (use case scenarios)
+In the root directory, run
 
-* User can view, add, update and delete projects.
-* User can add volunteers to the project
-* User can view volunteers for the project
-* User can edit and delete volunteers for the project
+* _`$ bundle exec rspec`_
 
+## Specifications
+
+* View, add, update and delete stores.
+* View, add, and delete brands.
+* View store detail page. Add brands to store. View all brands carried by that store.
+* View brand detail page. See stores that carry that particular brand.   
 
 ## Built With
 
