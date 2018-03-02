@@ -47,3 +47,11 @@ get('/brand/:id') do
   @brand = Brand.find(params.fetch("id").to_i())
   erb(:brand_edit)
 end
+
+patch('/store/:id') do
+  new_name = params[:new_name]
+  @id = params.fetch("id").to_i()
+  @store = Store.find(@id)
+  @store.update(:name => new_name)
+  redirect("/store/#{@id.to_s}")
+end
