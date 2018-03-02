@@ -9,4 +9,10 @@ describe(Store) do
     expect(Store.all).to eq [store1, store2]
   end
 
+  it "validates presence of a name" do
+    store = Store.new({:name => ""})
+    store.save
+    expect(store.save).to eq false
+  end
+
 end
