@@ -1,0 +1,17 @@
+<div class="well" style="text-align:center">
+  <h2>STORES</h2>
+  <br>
+  <ul style="list-style: none;">
+    <% @stores.each do |store| %>
+      <li color="black"><a href="/store/<%= store.id() %>"><%= store.name %></a></li>
+      <br>
+    <% end %>
+  </ul>
+  <br>
+  <form action="/store" method="post">
+      <input type="text" name="name" placeholder="ADD STORE">
+      <br>
+      <br>
+      <button type="submit" class="btn btn-success">ADD</button>
+  </form>
+</div>
