@@ -9,6 +9,17 @@ describe(Brand) do
     expect(Brand.all).to eq [brand1, brand2]
   end
 
+  it("validates presence of a title") do
+    brand = Brand.new({:title => "", :price => "$234"})
+    expect(brand.save).to eq false
+  end
+
+  it('capitalizes first letter of title') do
+      brand = Brand.new({:title => "saucony", :price => "$234"})
+      brand.save
+      expect(brand.title).to eq "Saucony"
+  end
+
 end
 
 
