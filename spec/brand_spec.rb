@@ -20,6 +20,8 @@ describe(Brand) do
       expect(brand.title).to eq "Saucony"
   end
 
-  it { should validate_uniqueness_of(:title)}
+  it {should validate_uniqueness_of(:title)}
+
+  it {should validate_length_of(:title).is_at_most(25)}
 
 end
