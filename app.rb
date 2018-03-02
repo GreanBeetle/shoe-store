@@ -28,7 +28,7 @@ end
 post('/store') do
   name = params[:name]
   Store.create({:name => name})
-  redirect("/store")
+  redirect('/store')
 end
 
 post('/brand') do
@@ -39,19 +39,25 @@ post('/brand') do
 end
 
 get('/store/:id') do
-  @store = Store.find(params.fetch("id").to_i())
+  @store = Store.find(params.fetch("id").to_i)
   erb(:store_edit)
 end
 
 get('/brand/:id') do
-  @brand = Brand.find(params.fetch("id").to_i())
+  @brand = Brand.find(params.fetch("id").to_i)
   erb(:brand_edit)
 end
 
 patch('/store/:id') do
   new_name = params[:new_name]
-  @id = params.fetch("id").to_i()
+  @id = params.fetch("id").to_i
   @store = Store.find(@id)
   @store.update(:name => new_name)
   redirect("/store/#{@id.to_s}")
+end
+
+delete('/store/:id') do
+  @store = Store.find(params.fetch("id").to_i)
+  @store.destroy
+  redirect('/store')
 end
