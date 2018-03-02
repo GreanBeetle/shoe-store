@@ -6,8 +6,6 @@
 
 #### Basic app written with Ruby, Sinatra, ActiveRecord, PostgreSQL, HTML, and CSS. It allows users to list faux shoe stores and shoe brands in a database, then pair stores with brands (and vice versa) via a SQL join table. The project aims to demonstrate many-to-many relationships.   
 
-![view 1](https://imgur.com/a/HnJeb.png)
-
 ## Setup and Installation
 
 #### Live application unavailable.
@@ -52,9 +50,9 @@ In the root directory, run
 * HTML
 * CSS
 
-## Screenshots
+<!-- ## Screenshots
 
-![view 2](https://imgur.com/a/Rx1ww.png)
+![view 2](https://imgur.com/a/Rx1ww.png) -->
 
 ## Authors
 
