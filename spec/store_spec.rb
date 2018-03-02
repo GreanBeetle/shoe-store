@@ -15,4 +15,6 @@ describe(Store) do
     expect(store.save).to eq false
   end
 
+  it { should validate_uniqueness_of(:name)}
+
 end

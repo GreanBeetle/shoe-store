@@ -20,10 +20,6 @@ describe(Brand) do
       expect(brand.title).to eq "Saucony"
   end
 
+  it { should validate_uniqueness_of(:title)}
+
 end
-
-
-# it "ensures ingredient name contains only letters" do
-#   ingredient = Ingredient.create({:name => "efgABC"})
-#   expect(ingredient.save).to eq true
-# end

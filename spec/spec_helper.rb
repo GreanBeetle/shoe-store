@@ -6,6 +6,7 @@ require("sinatra/activerecord")
 require("brand")
 require("store")
 require("brands_stores")
+require("shoulda-matchers")
 
 RSpec.configure do |config| # clear db between spec runs
   config.after(:each) do
